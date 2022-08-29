@@ -1,6 +1,9 @@
+import './App.css';
+import logo from './images/react-logo.png';
+
 const StaticPage = () => (
   <div>
-    <img className="react-logo" src="images/react-logo.png" alt="" />
+    <img className="react-logo" src={logo} alt="" />
     <h1>Fun facts about React</h1>
     <ul>
       <li>Was first released in 2013</li>
@@ -11,5 +14,5 @@ const StaticPage = () => (
     </ul>
   </div>
 );
-const divRoot = ReactDOM.createRoot(document.querySelector("#root"));
-divRoot.render(<StaticPage />);
+
+export default StaticPage;
