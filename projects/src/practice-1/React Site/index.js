@@ -1,4 +1,4 @@
-function Site() {
+export default function Site() {
   return (
     <nav>
       <h1>React Benefits</h1>
@@ -8,9 +8,7 @@ function Site() {
         <li>Contact</li>
       </ul>
     </nav>
-  );
-  
+  ); 
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Site />);
+
