@@ -1,5 +1,5 @@
 import './App.css';
-import logo from './images/react-logo.png';
+import logo from './react-logo.png';
 
 const StaticPage = () => (
   <div>
