@@ -2,7 +2,7 @@ function Header() {
   return (
     <header>
       <nav className="navbar">
-        <img className="react-style2" src="images/react-logo.png" alt="" />
+        <img className="react-style" src="images/react-logo.png" alt="" />
         <ul className="nav-items">
           <li>Pricing</li>
           <li>About</li>
