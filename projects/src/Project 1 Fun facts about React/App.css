@@ -62,7 +62,7 @@
   line-height: 20px;
   color: #fff;
   padding-bottom: 20px;
-  list-style: url(styled-bullet.png);
+  list-style: url(images/styled-bullet.png);
 }
 
 .facts {
@@ -75,7 +75,7 @@
   flex-direction: column;
   gap: 45px;
   padding: 55px 90px 100px 30px;
-  background-image: url(reactjs-icon.png);
+  background-image: url(images/reactjs-icon.png);
   background-repeat: no-repeat;
   background-position-x: 420px;
   background-position-y: 120px;
