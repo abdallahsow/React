@@ -1,8 +1,8 @@
-/* * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-} */
+}
 
 .static-app {
   padding: 10px;
@@ -19,7 +19,7 @@
   font-weight: 700;
   font-size: 25px;
   line-height: 30px;
-  color: #61DAFB;
+  color: #61dafb;
 }
 
 .extra-title {
@@ -28,7 +28,7 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;
-  color: #DEEBF8;
+  color: #deebf8;
 }
 
 .container {
@@ -39,7 +39,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  background: #21222A;
+  background: #21222a;
   justify-content: space-between;
   padding: 30px 25px;
 }
@@ -47,4 +47,40 @@
 .main-logo {
   display: flex;
   align-items: center;
+}
+
+.h1-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 45px;
+  color: #fff;
+}
+
+.body-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+  padding-bottom: 20px;
+  list-style: url(styled-bullet.png);
+}
+
+.facts {
+  padding-left: 50px;
+}
+
+.main-body {
+  background: #282d35;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding: 55px 90px 120px 30px;
+  background-image: url(reactjs-icon.png);
+  background-repeat: no-repeat;
+  background-position-x: 420px;
+  background-position-y: 120px;
 }
