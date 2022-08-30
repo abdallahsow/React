@@ -1,7 +1,50 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+
 .static-app {
   padding: 10px;
 }
 
 .react-logo {
   width: 40px;
+  padding-right: 5px;
+}
+
+.logo-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #61DAFB;
+}
+
+.extra-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #DEEBF8;
+}
+
+.container {
+  width: 550px;
+  margin: 10px auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background: #21222A;
+  justify-content: space-between;
+  padding: 30px 25px;
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
 }
