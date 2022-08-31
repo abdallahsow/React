@@ -5,6 +5,7 @@
 }
 
 .react-logo {
+  height: 30px;
   width: 40px;
   padding-right: 5px;
 }
@@ -77,6 +78,5 @@
   padding: 55px 90px 100px 30px;
   background-image: url(images/reactjs-icon.png);
   background-repeat: no-repeat;
-  background-position-x: 420px;
-  background-position-y: 120px;
+  background-position: 420px 120px;
 }
