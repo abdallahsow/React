@@ -5,9 +5,12 @@ const Navbar = () => (
 )
 
 function HeroSection() {
-    <div className="hero-section">
+    return (
+        <div className="hero-section">
         <Navbar />
     </div>
+    )
+    
 }
 
 export default HeroSection;
