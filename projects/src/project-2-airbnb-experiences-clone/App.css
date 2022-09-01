@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    padding: 25px 30px;
+    width: 80px;
+    margin-right: auto;
+}

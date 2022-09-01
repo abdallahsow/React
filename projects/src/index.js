@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from "./Project 1 Fun facts about React/App";
+import App from "./project-2-airbnb-experiences-clone/App";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
