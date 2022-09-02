@@ -29,24 +29,45 @@ body {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px  ;
+
 }
 
 .group-style-1 {
-    width: 75px;
+  width: 75px;
 }
 
 .group-style-2 {
-    width: 75px;
-    padding-top: 70px;
-
+  width: 75px;
+  padding-top: 70px;
 }
 
 .group-style-3 {
-    width: 75px;
+  width: 75px;
 }
 
 .group-style-4 {
-    width: 75px;
-    padding-top: 25px;
+  width: 75px;
+  padding-top: 25px;
+}
+
+.advert-layout {
+    padding: 30px 0 50px 35px;
+}
+
+.advert-title {
+  color: #000;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 110%;
+  padding-bottom : 15px;
+  width: 450px;
+}
+
+.advert-p {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 110%;
+  width: 320px;
 }
