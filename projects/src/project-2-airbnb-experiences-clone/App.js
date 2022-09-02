@@ -1,5 +1,6 @@
 import "./App.css";
 import { Navbar, Pictures, Advertisement } from "./components/HeroSection";
+import Card from "./components/Card";
 
 const App = () => (
   <main className="app">
@@ -7,6 +8,7 @@ const App = () => (
     <div className="experiences">
       <Pictures />
       <Advertisement />
+      <Card />
     </div>
   </main>
 );

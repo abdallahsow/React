@@ -6,7 +6,7 @@
 
 .navbar {
   border-radius: 10px 10px 0 0;
-  padding: 25px 30px;
+  padding: 25px 35px;
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -29,7 +29,6 @@ body {
   gap: 10px;
   align-items: center;
   justify-content: center;
-
 }
 
 .group-style-1 {
@@ -51,23 +50,31 @@ body {
 }
 
 .advert-layout {
-    padding: 30px 0 50px 35px;
+  padding: 30px 0 50px 35px;
+  font-family: "Poppins";
 }
 
 .advert-title {
   color: #000;
-  font-family: "Poppins";
   font-weight: 600;
   font-size: 40px;
   line-height: 110%;
-  padding-bottom : 15px;
+  padding-bottom: 15px;
   width: 450px;
 }
 
 .advert-p {
-  font-family: "Poppins";
   font-weight: 300;
   font-size: 20px;
   line-height: 110%;
   width: 320px;
+}
+
+.cards {
+    padding-left: 35px;
+    padding-bottom: 30px;
+}
+
+.cards--pic {
+    width: 170px;
 }
