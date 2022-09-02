@@ -1,22 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  background-color: #fff;
 }
 
 .logo {
-    
-    
-    background-color: #fff;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px 5px 0 0;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0;
+  padding: 25px 30px;
 }
 
 body {
-    background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .app {
-    width: 550px;
-    margin: 50px auto;
+  width: 550px;
+  margin: 50px auto;
 }
