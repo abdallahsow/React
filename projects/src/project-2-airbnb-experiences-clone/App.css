@@ -71,10 +71,18 @@ body {
 }
 
 .cards {
-    padding-left: 35px;
-    padding-bottom: 30px;
+  padding-left: 35px;
+  padding-bottom: 30px;
 }
 
 .cards--pic {
-    width: 170px;
+  width: 170px;
+}
+
+.cards-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 110%;
 }
