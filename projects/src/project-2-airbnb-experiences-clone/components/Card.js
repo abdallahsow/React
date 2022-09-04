@@ -6,13 +6,13 @@ export default function Card() {
     <section className="cards">
       <img className="cards--pic" src={Athlete} alt="Olympic Swimmer" />
       <div>
-        <img src={Star} alt="" />
-          <p className="cards--text">
-            5.0 <span>(6) USA</span>
-          </p>
+        <img className="cards--star" src={Star} alt="" />
+        <p className="cards--text">
+          5.0 <span className="text--location">(6) USA</span>
+        </p>
       </div>
-      <p>Life lessons with Katie Zaferes</p>
-      <p>
+      <p className="cards--text">Life lessons with Katie Zaferes</p>
+      <p className="cards--price">
         <strong>From $136</strong> / person
       </p>
     </section>
