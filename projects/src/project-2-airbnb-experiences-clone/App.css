@@ -76,6 +76,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  font-family: 'Poppins';
+  font-size: 15px;
 }
 
 .cards--pic {
@@ -85,7 +87,6 @@ body {
 .cards--text {
   font-family: "Poppins";
   font-weight: 300;
-  font-size: 15px;
   line-height: 110%;
   color: #222;
   display: inline;
@@ -94,14 +95,12 @@ body {
 .text--location {
   font-family: "Poppins";
   font-weight: 300;
-  font-size: 15px;
   line-height: 110%;
   color: #918E9B;
 }
 
 .cards--price {
   font-family: "Poppins";
-  font-size: 15px;
   line-height: 110%;
   color: #222;
 }
