@@ -8,10 +8,10 @@ body {
   background-color: whitesmoke;
 }
 
-.app {
-  width: 300px;
+/* .app {
+  width: 550px;
   margin: 50px auto;
-}
+} */
 
 .info-group {
   display: flex;
@@ -39,6 +39,7 @@ body {
 }
 
 .contact-card {
+  width: 200px;
   flex-basis: 225px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -48,8 +49,9 @@ body {
   padding-bottom: 20px;
   background-color: white;
   justify-content: center;
+  margin: 10px;
 }
 
-.contacts {
-    
+.card-alignment {
+  display: flex;
 }
