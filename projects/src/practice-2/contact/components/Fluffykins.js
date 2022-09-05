@@ -8,7 +8,7 @@ const Fluffykins = () => (
       {/* Card 1 */}
       <div className="contact-card">
         <img className="client-pic" src={fluffykins} alt="Fluffykins the Cat" />
-        <h2 className="client">Fluffykins</h2>
+        <h3 className="client">Fluffykins</h3>
         <div className="info-group">
           <img className="info-img" src={Phone} alt="Fluffykins' phone number" />
           <p className="info-text">(212) 555-2345</p>
@@ -22,7 +22,7 @@ const Fluffykins = () => (
       {/* Card 2 */}
       <div className="contact-card">
         <img className="client-pic" src={fluffykins} alt="Fluffykins the Cat" />
-        <h2 className="client">Fluffykins</h2>
+        <h3 className="client">Fluffykins</h3>
         <div className="info-group">
           <img className="info-img" src={Phone} alt="Fluffykins' phone number" />
           <p className="info-text">(212) 555-2345</p>
@@ -38,7 +38,7 @@ const Fluffykins = () => (
       {/* Card 3 */}
       <div className="contact-card">
         <img className="client-pic" src={fluffykins} alt="Fluffykins the Cat" />
-        <h2 className="client">Fluffykins</h2>
+        <h3 className="client">Fluffykins</h3>
         <div className="info-group">
           <img className="info-img" src={Phone} alt="Fluffykins' phone number" />
           <p className="info-text">(212) 555-2345</p>
@@ -52,7 +52,7 @@ const Fluffykins = () => (
       {/* Card 4 */}
       <div className="contact-card">
         <img className="client-pic" src={fluffykins} alt="Fluffykins the Cat" />
-        <h2 className="client">Fluffykins</h2>
+        <h3 className="client">Fluffykins</h3>
         <div className="info-group">
           <img className="info-img" src={Phone} alt="Fluffykins' phone number" />
           <p className="info-text">(212) 555-2345</p>
@@ -65,4 +65,5 @@ const Fluffykins = () => (
     </div>
   </div>
 );
+
 export default Fluffykins;

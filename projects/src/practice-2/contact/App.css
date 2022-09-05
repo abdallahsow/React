@@ -8,10 +8,10 @@ body {
   background-color: whitesmoke;
 }
 
-/* .app {
-  width: 550px;
-  margin: 50px auto;
-} */
+.app {
+    width: 1000px;
+    margin: auto;
+}
 
 .info-group {
   display: flex;
@@ -54,4 +54,10 @@ body {
 
 .card-alignment {
   display: flex;
+}
+
+.alignment {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
 }
