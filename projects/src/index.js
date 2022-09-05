@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from "./practice-2/contact/App";
+import App from "./practice-2/hard-coded-contact/App";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
