@@ -9,8 +9,8 @@ body {
 }
 
 .app {
-    width: 1000px;
-    margin: auto;
+  width: 1000px;
+  margin: auto;
 }
 
 .info-group {
@@ -57,7 +57,13 @@ body {
 }
 
 .alignment {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.main-card-alignment {
+  display: flex;
+  justify-content: center;
 }
