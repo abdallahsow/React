@@ -1,19 +1,18 @@
-import Athlete from "../images/zaferes-usa.png";
-import Star from "../images/star-icon.png";
-
-export default function Card() {
+export default function Card(props) {
+  const { img, star, rating, reviews, location, title, price } = props;
+  
   return (
     <section className="cards">
-      <img className="cards--pic" src={Athlete} alt="Olympic Swimmer" />
+      <img className="cards--pic" src={img} alt="Olympic Swimmer" />
       <div>
-        <img className="cards--star" src={Star} alt="" />
+        <img className="cards--star" src={star} alt="" />
         <p className="cards--text">
-          5.0 <span className="text--location">(6) • USA</span>
+          {rating} <span className="text--location">{reviews} • {location}</span>
         </p>
       </div>
-      <p className="cards--text">Life lessons with Katie Zaferes</p>
+      <p className="cards--text">{title}</p>
       <p className="cards--price">
-        <strong>From $136</strong> / person
+        <strong>From {price}</strong> / person
       </p>
     </section>
   );
