@@ -13,11 +13,11 @@ const App = () => (
       <Card
         img={Athlete}
         star={Star}
-        rating="5.0"
-        reviews="(6)"
+        rating={5.0}
+        reviews={6}
         location="USA"
         title="Life lessons with Katie Zaferes"
-        price="$136"
+        price={136}
       />
     </div>
   </main>

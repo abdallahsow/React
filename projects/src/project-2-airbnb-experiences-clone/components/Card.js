@@ -7,12 +7,12 @@ export default function Card(props) {
       <div>
         <img className="cards--star" src={star} alt="" />
         <p className="cards--text">
-          {rating} <span className="text--location">{reviews} • {location}</span>
+          {rating} <span className="text--location">({reviews}) • {location}</span>
         </p>
       </div>
       <p className="cards--text">{title}</p>
       <p className="cards--price">
-        <strong>From {price}</strong> / person
+        <strong>From ${price}</strong> / person
       </p>
     </section>
   );
