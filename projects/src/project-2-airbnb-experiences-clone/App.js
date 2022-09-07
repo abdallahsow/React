@@ -11,7 +11,7 @@ const App = () => (
       <Advertisement />
       <div className="cards-data">
         {data.map(({ img, star, rating, reviews, location, title, price }) =>
-        (<Card
+        <Card
           image={img}
           icon={star}
           rating={rating}
@@ -19,7 +19,7 @@ const App = () => (
           country={location}
           title={title}
           price={price}
-        />))}
+        />)}
       </div>
     </div>
   </main>
