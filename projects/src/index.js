@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from "./project-2-airbnb-experiences-clone/App";
+import App from "./practice-2/props/Mapping";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));

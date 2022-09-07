@@ -1,4 +1,4 @@
-export default [
+const props = [
   {
     setup: "What did the fish say when it hit the wall?",
     punchline: "Dam.",
@@ -35,3 +35,5 @@ export default [
     isPun: true,
   },
 ];
+
+export default props;
