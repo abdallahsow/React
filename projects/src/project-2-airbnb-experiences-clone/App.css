@@ -77,7 +77,7 @@ body {
   flex-direction: column;
   gap: 5px;
   font-family: 'Poppins';
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .cards--pic {
@@ -108,4 +108,9 @@ body {
 .cards--star {
   width: 20px;
   padding-right: 5px;
+}
+
+.cards-data {
+  display: flex;
+  gap: 20px;
 }

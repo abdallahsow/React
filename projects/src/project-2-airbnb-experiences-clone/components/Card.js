@@ -1,13 +1,13 @@
 export default function Card(props) {
-  const { img, star, rating, reviews, location, title, price } = props;
+  const { image, icon, rating, reviewCount, country, title, price } = props;
   
   return (
     <section className="cards">
-      <img className="cards--pic" src={img} alt="Olympic Swimmer" />
+      <img className="cards--pic" src={image} alt="Olympic Swimmer" />
       <div>
-        <img className="cards--star" src={star} alt="" />
+        <img className="cards--star" src={icon} alt="" />
         <p className="cards--text">
-          {rating} <span className="text--location">({reviews}) • {location}</span>
+          {rating} <span className="text--location">({reviewCount}) • {country}</span>
         </p>
       </div>
       <p className="cards--text">{title}</p>
