@@ -3,6 +3,7 @@ export default function Card(props) {
   
   return (
     <section className="cards">
+      <p className="badge">SOLD OUT</p>
       <img className="cards--pic" src={image} alt="Olympic Swimmer" />
       <div>
         <img className="cards--star" src={icon} alt="" />
