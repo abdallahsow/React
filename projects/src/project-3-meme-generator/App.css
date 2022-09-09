@@ -76,6 +76,7 @@ body {
   padding-block: 10px;
   width: 470px;
   margin-bottom: 35px;
+  cursor: pointer;
 }
 
 .meme-section {
