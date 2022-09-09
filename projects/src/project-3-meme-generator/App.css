@@ -28,11 +28,48 @@
 .header-text {
   font-family: "Inter";
   font-weight: 500;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 15px;
   margin-left: auto;
 }
 
 .header-icon {
   width: 30px;
+}
+
+.meme-input {
+  font-family: "Karla";
+  padding: 35px;
+}
+
+.input--fields {
+  display: flex;
+  gap: 15px;
+}
+
+.input-field {
+  border-radius: 5px;
+  border: 1px #d5d4d8 solid;
+  width: 230px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  padding-block: 10px;
+  outline: none;
+  padding-left: 10px;
+  color: #0D0D0D;
+}
+
+.meme-button {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding-block: 10px;
+  width: 470px;
 }
