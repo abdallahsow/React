@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 550px;
+  margin: 50px auto;
+}
+
+.header {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+}
+
+.header-title {
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.header-text {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  margin-left: auto;
+}
+
+.header-icon {
+  width: 30px;
+}
