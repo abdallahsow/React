@@ -1,12 +1,22 @@
-import './styles.css'
+import "./styles.css";
 
 const App = () => {
   const thingsArray = ["Thing 1", "Thing 2", "Thing 3"];
-  const thingsElement = thingsArray.map((thing) => <p className='item' key={thing}>{thing}</p>);
-  
-    return (
+  const thingsElement = thingsArray.map((thing) => (
+    <p className="item" key={thing}>
+      {thing}
+    </p>
+  ));
+
+  function addItem() {
+    const newItem = `Thing ${thingsArray.length + 1}`;
+    thingsArray.push(newItem);
+    console.log(thingsArray);
+  }
+
+  return (
     <div>
-      <button>Add item</button>
+      <button onClick={addItem}>Add item</button>
       {thingsElement}
     </div>
   );
