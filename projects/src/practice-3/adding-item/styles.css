@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #70b85d;
+  color: white;
+  padding: 20px;
+  font-family: "Karla", sans-serif;
+  font-size: 1.3rem;
+}
+
+button {
+  border-radius: 50px;
+  border: 3px solid #fff;
+  background-color: #70b85d;
+  color: #fff;
+  padding: 1rem;
+  width: 200px;
+  margin: auto;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #70b85d;
+}
+
+.item {
+    padding-bottom: 20px;
+}
