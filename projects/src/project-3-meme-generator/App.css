@@ -74,7 +74,7 @@ body {
   border-radius: 5px;
   text-align: center;
   padding-block: 10px;
-  width: 470px;
+  width: 475px;
   margin-bottom: 35px;
   cursor: pointer;
 }
@@ -82,4 +82,9 @@ body {
 .meme-section {
   padding: 35px;
   background-color: #fff;
+}
+
+.meme-pic {
+  width: 470px;
+  height: 270px;
 }
