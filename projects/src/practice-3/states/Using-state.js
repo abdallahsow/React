@@ -1,15 +1,27 @@
-import React from 'react';
-import './state.css'
+import React from "react";
+import "./state.css";
 
 const UseState = () => {
-    const answer = React.useState("Yes")
-    console.log(answer)
-  
-    return (
+  const [isImportant, func] = React.useState("Yes");
+  console.log(isImportant);
+
+  function handleClick() {
+    func("No");
+  }
+
+  function handleClick2() {
+    func("Yes");
+  }
+
+  return (
     <div className="state">
       <h1 className="state-title">Is state important to know?</h1>
-      <div className="state-value">
-        <h3>{answer[0]}</h3>
+      <div
+        onDoubleClick={handleClick2}
+        onClick={handleClick}
+        className="state-value"
+      >
+        <h3>{isImportant}</h3>
       </div>
     </div>
   );
