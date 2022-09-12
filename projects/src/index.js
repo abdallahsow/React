@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Count from "./practice-3/counter-practice/Count-tracking";
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Count from "./practice-3/counter-practice/Count-track";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Count />);
 
 // If you want to start measuring performance in your app, pass a function
