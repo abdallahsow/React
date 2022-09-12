@@ -7,13 +7,13 @@ const Count = () => {
     setCount(count + 1);
   }
 
-  function subtract() {
+  function substract() {
     setCount(count - 1);
   }
 
   return (
     <div className="counter">
-      <button onClick={subtract} className="counter-minus">
+      <button onClick={substract} className="counter-minus">
         -
       </button>
       <div className="counter-count">
