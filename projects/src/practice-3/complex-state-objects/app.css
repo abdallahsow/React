@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color:rgba(120, 120, 120, 0.44);
+  background-color: rgba(120, 120, 120, 0.44);
   font-family: "Inter", sans-serif;
 }
 
@@ -23,16 +23,16 @@ body {
   height: 350px;
   box-shadow: 5px 5px 5px 1px rgba(120, 120, 120, 0.44);
   padding: 20px;
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .user-star {
   width: 25px;
+  cursor: pointer;
 }
 
 .user-pic {
   width: 100px;
-  cursor: pointer;
 }
 
 .title {
