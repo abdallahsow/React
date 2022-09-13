@@ -1,7 +1,12 @@
 import "./styles.css";
+import React, { useState } from "react";
 
 const App = () => {
-  const thingsArray = ["Thing 1", "Thing 2", "Thing 3"];
+  const [thingsArray, setThingsArray] = useState([
+    "Thing 1",
+    "Thing 2",
+    "Thing 3",
+  ]);
   const thingsElement = thingsArray.map((thing) => (
     <p className="item" key={thing}>
       {thing}
@@ -9,9 +14,9 @@ const App = () => {
   ));
 
   function addItem() {
-    const newItem = `Thing ${thingsArray.length + 1}`;
-    thingsArray.push(newItem);
-    console.log(thingsArray);
+    setThingsArray(function () {
+      return [...thingsArray, `Thing ${thingsArray.length + 1}`];
+    });
   }
 
   return (
