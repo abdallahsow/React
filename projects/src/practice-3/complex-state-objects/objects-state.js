@@ -1,18 +1,27 @@
 import "./app.css";
 import User from "./images/user.png";
 import emptyStar from "./images/star-empty.png";
-import React from 'react';
+import filledStar from "./images/star-filled.png";
+import React from "react";
 
 const App = () => {
   const [contact, setContact] = React.useState({
-    firstName: "John",
-    lastName: "Doe",
+    firstName: "Marcus",
+    lastName: "Cracius",
     phone: "+1 (719) 555-1212",
     email: "itsmyrealname@example.com",
+    isFavorite: false,
   });
 
+  const { firstName, lastName, phone, email, isFavorite } = contact;
+
+  let starIcon = contact.isFavorite ? filledStar : emptyStar;
+
   const toggleFavorite = () => {
-    console.log("Toggle Favorite");
+    setContact((prevContact) => ({
+      ...contact,
+      isFavorite: !prevContact.isFavorite,
+    }));
   };
 
   return (
@@ -21,15 +30,15 @@ const App = () => {
       <div>
         <img
           className="user-star"
-          src={emptyStar}
+          src={starIcon}
           alt="star"
           onClick={toggleFavorite}
         />
         <h3 className="title">
-          {contact.firstName} {contact.lastName}
+          {firstName} {lastName}
         </h3>
-        <p className="text">{contact.phone}</p>
-        <p className="text">{contact.email}</p>
+        <p className="text">{phone}</p>
+        <p className="text">{email}</p>
       </div>
     </article>
   );
