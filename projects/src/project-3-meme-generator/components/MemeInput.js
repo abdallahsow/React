@@ -14,7 +14,7 @@ const MemeInput = () => {
   function getMeme() {
     const {
       data: { memes },
-    } = memesData;
+    } = allMemeImgs;
     const randomNumber = Math.floor(Math.random() * memes.length);
     const imgUrl = memes[randomNumber].url;
     console.log(imgUrl);

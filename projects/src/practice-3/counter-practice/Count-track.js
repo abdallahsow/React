@@ -1,13 +1,14 @@
 import "./count.css";
 import React from "react";
+import Count from "./Count";
 
-const Count = () => {
+const App = () => {
   const [value, setValue] = React.useState(0);
 
   function substract() {
-    setValue(function (prevValue) { 
+    setValue(function (prevValue) {
       return prevValue - 1;
-    }) ;
+    });
   }
 
   function add() {
@@ -21,9 +22,7 @@ const Count = () => {
       <button onClick={substract} className="counter-minus">
         -
       </button>
-      <div className="counter-count">
-        <h1>{value}</h1>
-      </div>
+      <Count number={value} />
       <button onClick={add} className="counter-plus">
         +
       </button>
@@ -31,4 +30,4 @@ const Count = () => {
   );
 };
 
-export default Count;
+export default App;
