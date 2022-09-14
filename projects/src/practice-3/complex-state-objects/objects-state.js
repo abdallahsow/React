@@ -1,8 +1,7 @@
 import "./app.css";
 import User from "./images/user.png";
-import emptyStar from "./images/star-empty.png";
-import filledStar from "./images/star-filled.png";
 import React from "react";
+import Img from "./Image.js";
 
 const App = () => {
   const [contact, setContact] = React.useState({
@@ -15,8 +14,6 @@ const App = () => {
 
   const { firstName, lastName, phone, email, isFavorite } = contact;
 
-  let starIcon = contact.isFavorite ? filledStar : emptyStar;
-
   const toggleFavorite = () => {
     setContact((prevContact) => ({
       ...contact,
@@ -28,12 +25,7 @@ const App = () => {
     <article className="user">
       <img className="user-pic" src={User} alt="user" />
       <div>
-        <img
-          className="user-star"
-          src={starIcon}
-          alt="star"
-          onClick={toggleFavorite}
-        />
+        <Img isFilled={isFavorite} handleClick={toggleFavorite} />
         <h3 className="title">
           {firstName} {lastName}
         </h3>
