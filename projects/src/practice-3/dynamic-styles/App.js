@@ -1,10 +1,16 @@
-import boxeData from ".boxeData";
+import boxeData from "./boxeData";
+import React from "react";
+import "./styles.css";
 
-export default App = function () {
+const App = function ({ darkMode }) {
   const [square, setSquare] = React.useState(boxeData);
 
+  const styles = {
+    backgroundColor: darkMode ? "#222" : "#ccc",
+  };
+
   const squareElements = square.map(({ id, on }) => (
-    <div key={id} className="boxe"></div>
+    <div style={styles} key={id} className="boxe"></div>
   ));
 
   return (
@@ -14,3 +20,5 @@ export default App = function () {
     </div>
   );
 };
+
+export default App;
