@@ -6,7 +6,17 @@ import Box from "./Box";
 const App = function () {
   const [square, setSquare] = React.useState(boxeData);
 
-  const squareElements = square.map(square => <Box key={square.id} {...square} />);
+  const toggle = (id) => {
+    setSquare((prevSquare) =>
+      prevSquare.map((square) =>
+        square.id === id ? { ...square, on: !square.on } : square
+      )
+    );
+  };
+
+  const squareElements = square.map((square) => (
+    <Box key={square.id} {...square} handleClick={toggle} />
+  ));
 
   return (
     <div>
