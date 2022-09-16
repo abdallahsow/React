@@ -1,5 +1,6 @@
 import jokesData from "./jokesData";
 import Joke from "./Joke";
+import "./style.css";
 
 export default function JokeMapping() {
   return (
