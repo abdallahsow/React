@@ -15,7 +15,7 @@ export default function Joke({ setup, punchline, upvotes, downvotes, isPun }) {
       <p>Downvotes: {downvotes}</p>
       <p>Is pun: {isPun ? "Yes" : "No"}</p>
       <button className="show-button" onClick={toggle}>
-        Show
+        {isShown ? "Hide" : "Show"}
       </button>
       <hr />
     </div>
