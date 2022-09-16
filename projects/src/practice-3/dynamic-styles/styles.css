@@ -7,8 +7,9 @@
 .boxe {
   width: 100px;
   height: 100px;
-  border: 1px solid black;
+  border: solid;
   border-radius: 5px;
   margin: 10px;
   display: inline-block;
+  cursor: pointer;
 }

@@ -1,6 +1,6 @@
 const Box = function (props) {
   const styling = {
-    backgroundColor: props.on ? "#222" : "#fff",
+    backgroundColor: props.on ? "#222" : "#ccc",
   };
 
   return (
