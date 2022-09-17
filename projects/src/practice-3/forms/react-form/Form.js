@@ -2,9 +2,16 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
 
-  function handleChange() {
-    console.log("Changed");
+  console.log(name, surname);
+
+  function handleChange1(event) {
+    setName(event.target.value);
+  }
+
+  function handleChange2(event) {
+    setSurname(event.target.value);
   }
 
   return (
@@ -12,7 +19,13 @@ const Form = () => {
       <input
         type="text"
         placeholder="Enter your name"
-        onChange={handleChange}
+        onChange={handleChange1}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Enter your surname"
+        onChange={handleChange2}
       />
     </form>
   );
