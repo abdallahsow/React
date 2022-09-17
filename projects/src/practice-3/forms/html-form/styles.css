@@ -11,11 +11,13 @@
   margin-block: 10px;
   text-indent: 10px;
   height: 2rem;
+  width: 20%;
 }
 
 .input::placeholder {
   font-family: "Karla", sans-serif;
   font-size: 1rem;
+  text-indent: 30px;
 }
 
 .submit-input {
