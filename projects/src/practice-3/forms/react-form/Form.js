@@ -1,10 +1,9 @@
-import React from "react";
-
-const Form = ({ type, placeholder, name, handleChange }) => {
+const Form = ({ type, placeholder, name, handleChange, labelName }) => {
   return (
     <>
-      <label for={name}>{name}</label>
+      <label htmlFor={name}>{labelName}</label>
       <input
+        className="input"
         type={type}
         placeholder={placeholder}
         onChange={handleChange}

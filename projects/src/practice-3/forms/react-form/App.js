@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import intels from "./intels";
 import Form from "./Form";
+import "./style.css";
 
 export default function App() {
   const [formData, setFormData] = useState({
