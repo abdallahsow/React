@@ -1,31 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: '',
-  });
-
-  function handleChange(event) {
-    setFormData(event.target.value);
-  }
-
+const Form = ({ type, placeholder, name, handleChange }) => {
   return (
-    <form>
+    <>
+      <label for={name}>{name}</label>
       <input
-        type="text"
-        placeholder="Enter your name"
+        type={type}
+        placeholder={placeholder}
         onChange={handleChange}
-        name="firstName"
+        name={name}
+        id={name}
       />
       <br />
-      <input
-        type="text"
-        placeholder="Enter your surname"
-        onChange={handleChange}
-        name="lastName"
-      />
-    </form>
+    </>
   );
 };
 
