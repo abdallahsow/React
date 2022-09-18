@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: '',
+  });
 
-  console.log(name, surname);
-
-  function handleChange1(event) {
-    setName(event.target.value);
-  }
-
-  function handleChange2(event) {
-    setSurname(event.target.value);
+  function handleChange(event) {
+    setFormData(event.target.value);
   }
 
   return (
@@ -19,13 +15,15 @@ const Form = () => {
       <input
         type="text"
         placeholder="Enter your name"
-        onChange={handleChange1}
+        onChange={handleChange}
+        name="firstName"
       />
       <br />
       <input
         type="text"
         placeholder="Enter your surname"
-        onChange={handleChange2}
+        onChange={handleChange}
+        name="lastName"
       />
     </form>
   );
