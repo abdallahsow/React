@@ -70,6 +70,7 @@ const radioData = [
 ];
 
 const select = [
+  { optionName: "--Choose--", value: "" },
   { optionName: "Red", value: "red" },
   { optionName: "Green", value: "green" },
   { optionName: "Blue", value: "blue" },

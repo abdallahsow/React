@@ -16,6 +16,7 @@ export default function App() {
     comments: "",
     isFriendly: false,
     employment: "",
+    favColor: "",
   });
 
   console.log(formData);
@@ -72,7 +73,15 @@ export default function App() {
       <br />
       <label htmlFor="favColor">What is your favorite color ?</label>
       <br />
-      <select id="favColor" className="input">{selectData}</select>
+      <select
+        name="favColor"
+        id="favColor"
+        className="input"
+        onChange={trackChange}
+        value={formData.favColor}
+      >
+        {selectData}
+      </select>
     </form>
   );
 }
