@@ -9,19 +9,26 @@ export default function App() {
     password: "",
     confirmPassword: "",
   });
-    
-    const handleChange = (event) => {
-        // const { name, value, checked } = event.target;
-        console.log(formData)
-    }
-    
+
+  const handleChange = (event) => {
+    // const { name, value, checked } = event.target;
+    console.log(formData);
+  };
+
   const inputs = details.map((detail) => (
-      <Input key={detail.name} {...detail} updatingFunc={handleChange} />
+    <Input key={detail.name} {...detail} updatingFunc={handleChange} />
   ));
 
   return (
     <div className="form-container">
-      <form className="form">{inputs}</form>
+      <form className="form">
+        {inputs}
+        <div className='form-marketing'>
+          <input type="checkbox" id="okayToEmail" />
+          <label htmlFor="okayToEmail">I want to join the newsletter</label>
+              </div>
+        <button className="form-button">Sign Up</button>
+      </form>
     </div>
   );
 }

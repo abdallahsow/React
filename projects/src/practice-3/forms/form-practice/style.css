@@ -7,4 +7,48 @@
 .form-container {
   background-color: #639;
   font-family: "Inter", sans-serif;
+  padding: 50px;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.75);
+  background-color: #fff;
+  width: 350px;
+  margin: auto;
+}
+
+.input-form {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: "Inter", sans-serif;
+}
+
+.form-marketing {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  padding-right: 15px;
+}
+
+.form-button {
+  background-color: #639;
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
