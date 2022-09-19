@@ -19,8 +19,6 @@ export default function App() {
     favColor: "",
   });
 
-  console.log(formData);
-
   const trackChange = (event) => {
     const { name, value, type, checked } = event.target;
 
@@ -42,8 +40,13 @@ export default function App() {
     <Option key={select.value} {...select} />
   ));
 
+  const handleSubmit = function (event) {
+        event.preventDefault();
+      console.log(formData);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {form}
       <label htmlFor="comments">Comments</label>
       <textarea
@@ -82,6 +85,8 @@ export default function App() {
       >
         {selectData}
       </select>
+      <br />
+      <button className="submit-button">Submit</button>
     </form>
   );
 }
