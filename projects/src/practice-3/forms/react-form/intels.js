@@ -35,27 +35,37 @@ const radioData = [
   {
     type: "radio",
     id: "full-time",
+    value: "full-time",
     labelName: "Full-time",
+    name: "employment",
   },
   {
     type: "radio",
     id: "part-time",
     labelName: "Part-time",
+    name: "employment",
+    value: "part-time",
   },
   {
     type: "radio",
     id: "freelance",
+    value: "freelance",
     labelName: "Free-lance",
+    name: "employment",
   },
   {
     type: "radio",
     id: "internship",
+    value: "internship",
     labelName: "Internship",
+    name: "employment",
   },
   {
     type: "radio",
-    id: "Unemployed",
+    id: "unemployed",
+    value: "unemployed",
     labelName: "Unemployed",
+    name: "employment",
   },
 ];
 

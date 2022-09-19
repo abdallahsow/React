@@ -14,9 +14,10 @@ export default function App() {
     phone: "",
     comments: "",
     isFriendly: false,
+    employment: "",
   });
 
-  console.log(formData);
+  console.log(formData.employment);
 
   const trackChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -56,7 +57,7 @@ export default function App() {
       <fieldset>
         <legend>Current Employment Status</legend>
         {radioData.map((radio) => (
-          <Radio key={radio.id} {...radio} />
+          <Radio key={radio.id} {...radio} handleChange={trackChange} />
         ))}
       </fieldset>
     </form>
