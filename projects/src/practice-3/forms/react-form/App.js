@@ -10,6 +10,7 @@ export default function App() {
     email: "",
     password: "",
     phone: "",
+    comments: "",
   });
 
   console.log(formData);
@@ -26,6 +27,13 @@ export default function App() {
       {intels.map((intel) => (
         <Form key={intel.name} {...intel} handleChange={trackChange} />
       ))}
+      <label htmlFor="comments">Comments</label>
+      <textarea
+        name="comments"
+        placeholder="Comments!"
+        onChange={trackChange}
+        className="textarea"
+      />
     </form>
   );
 }

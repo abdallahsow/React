@@ -20,6 +20,23 @@ body {
   margin-top: 10px;
   border: 1px solid #444;
   border-radius: 5px;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+}
+
+.textarea {
+  width: 20%;
+  height: 70px;
+  display: block;
+  text-indent: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  outline: none;
+  padding-top: 5px;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
 }
 
 label {
@@ -28,6 +45,11 @@ label {
 }
 
 .input::placeholder {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+}
+
+.textarea::placeholder {
   font-family: "Karla", sans-serif;
   font-size: 1rem;
 }
