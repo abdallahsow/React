@@ -31,4 +31,33 @@ const data = [
   },
 ];
 
+const radioData = [
+  {
+    type: "radio",
+    id: "full-time",
+    labelName: "Full-time",
+  },
+  {
+    type: "radio",
+    id: "part-time",
+    labelName: "Part-time",
+  },
+  {
+    type: "radio",
+    id: "freelance",
+    labelName: "Free-lance",
+  },
+  {
+    type: "radio",
+    id: "internship",
+    labelName: "Internship",
+  },
+  {
+    type: "radio",
+    id: "Unemployed",
+    labelName: "Unemployed",
+  },
+];
+
 export default data;
+export { radioData };

@@ -44,7 +44,8 @@ body {
   font-size: 1rem;
 }
 
-label {
+label,
+legend {
   margin-left: 10px;
   color: #ccc;
 }
@@ -57,4 +58,15 @@ label {
 .textarea::placeholder {
   font-family: "Karla", sans-serif;
   font-size: 1rem;
+}
+
+fieldset {
+  width: 20%;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.radio {
+  margin-bottom: 10px;
+  padding-right: 10px;
 }

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import intels from "./intels";
 import Form from "./Form";
 import "./style.css";
+import { radioData } from "./intels";
+import Radio from "./RadioInputs";
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -49,6 +51,14 @@ export default function App() {
         className="checkbox"
       />
       <label htmlFor="isFriendly">Are you friendly ?</label>
+      <br />
+      <br />
+      <fieldset>
+        <legend>Current Employment Status</legend>
+        {radioData.map((radio) => (
+          <Radio key={radio.id} {...radio} />
+        ))}
+      </fieldset>
     </form>
   );
 }
