@@ -11,14 +11,17 @@ export default function App() {
     password: "",
     phone: "",
     comments: "",
+    isFriendly: false,
   });
 
   console.log(formData);
 
   const trackChange = (event) => {
+    const { name, value, type, checked } = event.target;
+
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -29,11 +32,23 @@ export default function App() {
       ))}
       <label htmlFor="comments">Comments</label>
       <textarea
+        id="comments"
         name="comments"
         placeholder="Comments!"
         onChange={trackChange}
         className="textarea"
+        value={formData.comments}
       />
+      <br />
+      <input
+        type="checkbox"
+        name="isFriendly"
+        id="isFriendly"
+        checked={formData.isFriendly}
+        onChange={trackChange}
+        className="checkbox"
+      />
+      <label htmlFor="isFriendly">Are you friendly ?</label>
     </form>
   );
 }
