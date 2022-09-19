@@ -69,5 +69,19 @@ const radioData = [
   },
 ];
 
+const select = [
+  { optionName: "Red", value: "red" },
+  { optionName: "Green", value: "green" },
+  { optionName: "Blue", value: "blue" },
+  { optionName: "Yellow", value: "yellow" },
+  { optionName: "Orange", value: "orange" },
+  { optionName: "Purple", value: "purple" },
+  { optionName: "Pink", value: "pink" },
+  { optionName: "Brown", value: "brown" },
+  { optionName: "Black", value: "black" },
+  { optionName: "White", value: "white" },
+  { optionName: "Indigo", value: "indigo" },
+];
+
 export default data;
-export { radioData };
+export { radioData, select };

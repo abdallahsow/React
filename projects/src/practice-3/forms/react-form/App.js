@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import intels from "./intels";
 import Form from "./Form";
 import "./style.css";
-import { radioData } from "./intels";
+import { radioData, select } from "./intels";
 import Radio from "./RadioInputs";
+import Option from "./SelectOption";
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ export default function App() {
     employment: "",
   });
 
-  console.log(formData.employment);
+  console.log(formData);
 
   const trackChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -28,11 +29,21 @@ export default function App() {
     });
   };
 
+  const form = intels.map((intel) => (
+    <Form key={intel.name} {...intel} handleChange={trackChange} />
+  ));
+
+  const radio = radioData.map((radio) => (
+    <Radio key={radio.id} {...radio} handleChange={trackChange} />
+  ));
+
+  const selectData = select.map((select) => (
+    <Option key={select.value} {...select} />
+  ));
+
   return (
     <form>
-      {intels.map((intel) => (
-        <Form key={intel.name} {...intel} handleChange={trackChange} />
-      ))}
+      {form}
       <label htmlFor="comments">Comments</label>
       <textarea
         id="comments"
@@ -56,10 +67,12 @@ export default function App() {
       <br />
       <fieldset>
         <legend>Current Employment Status</legend>
-        {radioData.map((radio) => (
-          <Radio key={radio.id} {...radio} handleChange={trackChange} />
-        ))}
+        {radio}
       </fieldset>
+      <br />
+      <label htmlFor="favColor">What is your favorite color ?</label>
+      <br />
+      <select id="favColor" className="input">{selectData}</select>
     </form>
   );
 }
