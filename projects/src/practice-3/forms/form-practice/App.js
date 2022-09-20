@@ -8,25 +8,40 @@ export default function App() {
     email: "",
     password: "",
     confirmPassword: "",
+    hasAccepted: false,
   });
 
   const handleChange = (event) => {
-    // const { name, value, checked } = event.target;
-    console.log(formData);
+    const { name, value, checked, type } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
   const inputs = details.map((detail) => (
     <Input key={detail.name} {...detail} updatingFunc={handleChange} />
   ));
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData, "Successful!");
+  };
+
   return (
     <div className="form-container">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         {inputs}
-        <div className='form-marketing'>
-          <input type="checkbox" id="okayToEmail" />
+        <div className="form-marketing">
+          <input
+            name="hasAccepted"
+            type="checkbox"
+            id="okayToEmail"
+            checked={formData.checked}
+            onChange={handleChange}
+          />
           <label htmlFor="okayToEmail">I want to join the newsletter</label>
-              </div>
+        </div>
         <button className="form-button">Sign Up</button>
       </form>
     </div>

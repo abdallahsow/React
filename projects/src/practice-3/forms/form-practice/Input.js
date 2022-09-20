@@ -1,4 +1,4 @@
-const Input = function ({ type, name, placeholder, updatingFunc, state }) {
+const Input = function ({ type, name, placeholder, updatingFunc}) {
   return (
     <input
       className="input-form"
