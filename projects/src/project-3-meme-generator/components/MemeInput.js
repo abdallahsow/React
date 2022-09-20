@@ -17,7 +17,6 @@ const MemeInput = () => {
     } = allMemeImgs;
     const randomNumber = Math.floor(Math.random() * memes.length);
     const imgUrl = memes[randomNumber].url;
-    console.log(imgUrl);
     setMeme((meme) => ({ ...meme, randomImg: imgUrl }));
   }
 
@@ -25,6 +24,8 @@ const MemeInput = () => {
     const { name, value } = event.target;
     setMeme((prevMeme) => ({ ...prevMeme, [name]: value }));
   }
+
+  console.log(meme);
 
   return (
     <div>
@@ -34,11 +35,15 @@ const MemeInput = () => {
             onChange={handleChange}
             placeholder="Top text"
             className="input-field"
+            name="topText"
+            value={topText}
           />
           <input
             onChange={handleChange}
             placeholder="Bottom text"
             className="input-field"
+            name="bottomText"
+            value={bottomText}
           />
         </div>
         <button onClick={getMeme} className="meme-button">
@@ -46,9 +51,9 @@ const MemeInput = () => {
         </button>
       </div>
       <div className="meme">
-        <h2 className="meme-text-top">One does not simply</h2>
+        <h2 className="meme-text-top">{meme.topText}</h2>
         <img className="meme-pic" src={randomImg} alt="meme" />
-        <h2 className="meme-text-bottom">Walk into mordor</h2>
+        <h2 className="meme-text-bottom">{meme.bottomText}</h2>
       </div>
     </div>
   );
