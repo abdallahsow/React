@@ -21,21 +21,34 @@ const MemeInput = () => {
     setMeme((meme) => ({ ...meme, randomImg: imgUrl }));
   }
 
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({ ...prevMeme, [name]: value }));
+  }
+
   return (
     <div>
       <div className="meme-input">
         <div className="input--fields">
-          <input placeholder="Top text" className="input-field" />
-          <input placeholder="Bottom text" className="input-field" />
+          <input
+            onChange={handleChange}
+            placeholder="Top text"
+            className="input-field"
+          />
+          <input
+            onChange={handleChange}
+            placeholder="Bottom text"
+            className="input-field"
+          />
         </div>
         <button onClick={getMeme} className="meme-button">
           Get a new meme image
         </button>
       </div>
-      <div>
-        <div></div>
+      <div className="meme">
+        <h2 className="meme-text-top">One does not simply</h2>
         <img className="meme-pic" src={randomImg} alt="meme" />
-        <div></div>
+        <h2 className="meme-text-bottom">Walk into mordor</h2>
       </div>
     </div>
   );

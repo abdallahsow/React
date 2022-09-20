@@ -25,7 +25,11 @@ export default function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData, "Successful!");
+    const isValid =
+      formData.password === formData.confirmPassword
+        ? "Successfully signed up!"
+        : "Passwords do not match!";
+    console.log(isValid);
   };
 
   return (
