@@ -4,13 +4,17 @@ const WindowTracker = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.addEventListener("resize", function () {
+    function watchWidth() {
       setWindowWidth(window.innerWidth);
-    });
+    }
+
+    window.addEventListener("resize", watchWidth);
+
+    return () => {
+      window.removeEventListener("resize", watchWidth);
+    };
   }, []);
 
-    console.log("Effect ran!");
-    
   return <h1>window width: {windowWidth}</h1>;
 };
 
