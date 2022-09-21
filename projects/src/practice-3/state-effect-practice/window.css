@@ -3,3 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #ff7c43;
+}
+
+.toggle-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 350px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}

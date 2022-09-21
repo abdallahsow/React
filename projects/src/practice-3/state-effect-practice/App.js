@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./windows.css";
+import "./window.css";
 import WindowTracker from "./WindowTracker";
 
 function App() {
   return (
-    <div>
-      <button></button>
+    <div className="container">
+      <button className="toggle-button">Toggle WindowTracker</button>
       <WindowTracker />
     </div>
   );
