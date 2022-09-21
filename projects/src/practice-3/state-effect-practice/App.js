@@ -3,10 +3,18 @@ import "./window.css";
 import WindowTracker from "./WindowTracker";
 
 function App() {
+  const [show, setShow] = useState(true);
+
+  const toggle = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="container">
-      <button className="toggle-button">Toggle WindowTracker</button>
-      <WindowTracker />
+      <button className="toggle-button" onClick={toggle}>
+        Toggle WindowTracker
+      </button>
+      {show && <WindowTracker />}
     </div>
   );
 }
