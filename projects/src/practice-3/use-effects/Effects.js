@@ -3,16 +3,16 @@ import "./effect.css";
 
 const Effects = () => {
   const [starWarsData, setStarWarsData] = useState({});
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   console.log("Component rendered!");
 
   useEffect(function () {
     console.log("useEffect called!");
-    fetch("https://swapi.dev/api/people/1")
+    fetch(`https://swapi.dev/api/people/${count}`)
       .then((response) => response.json())
       .then((data) => setStarWarsData(data));
-  }, []);
+  }, [count]);
 
   return (
     <div className="star-wars">
