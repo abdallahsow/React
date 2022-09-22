@@ -7,12 +7,12 @@ export default function Navbar() {
         <img className="react-logo" src={logo} alt="" />
         <h3 className="logo-title">React Facts</h3>
       </div>
-      <div>
-        <label htmlFor="switch">
-          <p id="switch">Light</p>
-          <button>switch</button>
-          <p id="switch">Dark</p>
-        </label>
+      <div className="toggle">
+        <p>Light</p>
+        <div className="toggle-switch">
+          <div className="toggle-switch__circle"></div>
+        </div>
+        <p>Dark</p>
       </div>
     </nav>
   );
