@@ -17,18 +17,35 @@
   color: #61dafb;
 }
 
+.app {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app-dark {
+  background-color: #fff;
+}
+
 .container {
   width: 550px;
-  margin: 10px auto;
+  margin: auto;
+  padding-top: 20px;
   font-family: "Inter";
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  background: #21222a;
+  background: #fff;
   justify-content: space-between;
   padding: 30px 25px;
+  box-shadow: inset 0 1px 4px rgb(0 0 0 / 25%);
+  z-index: 1;
+}
+
+.navbar-dark {
+  background-color: #21222a;
 }
 
 .main-logo {
@@ -40,14 +57,12 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 45px;
-  color: #fff;
 }
 
 .body-text {
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  color: #fff;
   padding-bottom: 20px;
   list-style: url(images/styled-bullet.png);
 }
@@ -57,14 +72,21 @@
 }
 
 .main-body {
-  background: #282d35;
+  background: #fff;
   display: flex;
   flex-direction: column;
   gap: 45px;
   padding: 55px 90px 100px 30px;
-  background-image: url(images/reactjs-icon.png);
+  background-image: url(images/reactjs-icon-light.png);
   background-repeat: no-repeat;
   background-position: 420px 120px;
+  color: #2b283a;
+}
+
+.main-body-dark {
+  background-image: url("./images/reactjs-icon-dark.png");
+  background-color: #282d35;
+  color: white;
 }
 
 .toggle {
@@ -87,11 +109,38 @@
   box-sizing: content-box;
   background-color: #2b283a;
   margin-inline: 10px;
+  justify-content: flex-start;
 }
 
-.toggle-switch__circle {
+.toggle-switch-dark {
+  border-color: white;
+  background-color: #f5f5f5;
+  justify-content: flex-end;
+}
+
+.switch__circle {
   height: 15px;
   width: 15px;
   border-radius: 50%;
   background: #fff;
+}
+
+.switch__circle-dark {
+  background: black;
+}
+
+.light {
+  color: #2b283a;
+}
+
+.light--dark__mode {
+  color: #918e9b;
+}
+
+.dark {
+  color: #d5d4d8;
+}
+
+.dark--dark__mode {
+  color: #fff;
 }

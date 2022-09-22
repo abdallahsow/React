@@ -8,11 +8,11 @@ export default function Navbar() {
         <h3 className="logo-title">React Facts</h3>
       </div>
       <div className="toggle">
-        <p>Light</p>
+        <p className="light">Light</p>
         <div className="toggle-switch">
-          <div className="toggle-switch__circle"></div>
+          <div className="switch__circle"></div>
         </div>
-        <p>Dark</p>
+        <p className="dark">Dark</p>
       </div>
     </nav>
   );
