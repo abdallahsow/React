@@ -16,11 +16,21 @@ export default function App() {
   };
 
   return (
-    <div className="no-notes">
-      <h1>You have no notes</h1>
-      <button onClick={createNewNote} className="first-note">
-        Create one now
-      </button>
-    </div>
+    <main>
+      {notes.length ? (
+        <Split
+          sizes={[30, 70]}
+          className="split"
+          direction="horizontal"
+        ></Split>
+      ) : (
+        <div className="no-notes">
+          <h1>You have no notes</h1>
+          <button onClick={createNewNote} className="first-note">
+            Create one now
+          </button>
+        </div>
+      )}
+    </main>
   );
 }
