@@ -5,7 +5,7 @@ const Dice = function () {
       <p className="dice">{dice}</p>
     </div>
   ));
-  return <div>{renderedDices}</div>;
+  return <div className="grid-layout">{renderedDices}</div>;
 };
 
 export default Dice;
