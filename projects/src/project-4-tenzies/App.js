@@ -9,6 +9,7 @@ const App = function () {
         <div className="game">
           <Header />
           <Dice />
+          <button className="roll-dice">Roll</button>
         </div>
       </div>
     </main>
