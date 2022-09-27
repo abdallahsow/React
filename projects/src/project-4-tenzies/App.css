@@ -37,7 +37,6 @@
   line-height: 15px;
   color: #4a4e74;
   text-align: center;
-  padding-bottom: 25px;
 }
 
 .dice-box {
@@ -65,6 +64,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   align-items: center;
+  padding-block: 25px;
 }
 
 .roll-dice {
@@ -76,4 +76,6 @@
   padding: 5px 20px;
   border: none;
   color: #fff;
+  cursor: pointer;
+  outline: none;
 }
