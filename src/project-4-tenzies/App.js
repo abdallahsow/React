@@ -10,19 +10,34 @@ const App = function () {
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
-      newDice.push({ id: nanoid(), value: Math.ceil(Math.random() * 6), isHeld: false });
+      newDice.push({
+        id: nanoid(),
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false,
+      });
     }
     return newDice;
   }
 
   function rollDice() {
-    setDice(allNewDice());
+    setDice(function () {
+      return dice.map(function (die) {
+        return die.isHeld === true
+          ? die
+          : {
+              ...die,
+              value: Math.ceil(Math.random() * 6),
+            };
+      });
+    });
   }
 
   function hold(dieId) {
-    setDice(dice.map(die => {
-      return die.id === dieId ? {...die, isHeld: !die.isHeld} : die
-    }))
+    setDice(
+      dice.map((die) => {
+        return die.id === dieId ? { ...die, isHeld: !die.isHeld } : die;
+      })
+    );
   }
 
   return (
