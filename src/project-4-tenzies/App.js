@@ -20,17 +20,9 @@ const App = function () {
   }
 
   function hold(dieId) {
-    const filteredDice = []
-    dice.filter((die) => {
-      if (die.id === dieId) {
-        filteredDice.push({ ...die, isHeld: !die.isHeld })
-      } else {
-        filteredDice.push(die);
-      }
-      return filteredDice;
-    })
-    setDice(filteredDice);
-    console.log(filteredDice)
+    setDice(dice.map(die => {
+      return die.id === dieId ? {...die, isHeld: !die.isHeld} : die
+    }))
   }
 
   return (
