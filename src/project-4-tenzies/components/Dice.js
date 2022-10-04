@@ -1,9 +1,11 @@
-const Dice = function ({ dice }) {
+const Dice = function ({ handleClick, value, isHeld, id }) {
   return (
-
-      <div key={dice} className="dice-box">
-        <p className="dice">{dice}</p>
-      </div>
+    <div
+      className={isHeld ? "dice-box dice-box-clicked" : "dice-box"}
+      onClick={() => handleClick(id)}
+    >
+      <p className="dice">{value}</p>
+    </div>
   );
 };
 

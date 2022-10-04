@@ -52,6 +52,10 @@
   justify-content: center;
 }
 
+.dice-box-clicked {
+  background-color: #59E391;
+}
+
 .dice {
   font-size: 20px;
   line-height: 24px;
