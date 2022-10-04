@@ -5,12 +5,17 @@ import Dice from "./components/Dice";
 
 const App = function () {
   const [dice, setDice] = useState(allNewDice());
+  
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
       newDice.push(Math.ceil(Math.random() * 6));
     }
     return newDice;
+  }
+
+  function rollDice() {
+    setDice(allNewDice());
   }
 
   return (
@@ -23,7 +28,7 @@ const App = function () {
               <Dice key={index} dice={num} />
             ))}
           </div>
-          <button className="roll-dice">Roll</button>
+          <button onClick={rollDice} className="roll-dice">Roll</button>
         </div>
       </div>
     </main>
