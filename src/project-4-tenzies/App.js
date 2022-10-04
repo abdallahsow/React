@@ -9,7 +9,7 @@ const App = function () {
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
-      newDice.push(Math.ceil(Math.random() * 6));
+      newDice.push({value: Math.ceil(Math.random() * 6), isHeld: false});
     }
     return newDice;
   }
@@ -25,7 +25,7 @@ const App = function () {
           <Header />
           <div className="grid-layout">
             {dice.map((num, index) => (
-              <Dice key={index} dice={num} />
+              <Dice key={index} dice={num.value} />
             ))}
           </div>
           <button onClick={rollDice} className="roll-dice">Roll</button>
