@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Dice from "./components/Dice";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 const App = function () {
   const [dice, setDice] = useState(allNewDice());
@@ -31,16 +32,21 @@ const App = function () {
   }
 
   function rollDice() {
-    setDice(function () {
-      return dice.map(function (die) {
-        return die.isHeld === true
-          ? die
-          : {
-              ...die,
-              value: Math.ceil(Math.random() * 6),
-            };
+    if (!tenzies) {
+      setDice(function () {
+        return dice.map(function (die) {
+          return die.isHeld === true
+            ? die
+            : {
+                ...die,
+                value: Math.ceil(Math.random() * 6),
+              };
+        });
       });
-    });
+    } else {
+      setTenzies(false);
+      setDice(allNewDice());
+    }
   }
 
   function hold(dieId) {
@@ -51,24 +57,27 @@ const App = function () {
     );
   }
 
-  const rollText = tenzies ? "Reset Game" : "Roll";
+  const rollText = tenzies ? "New Game" : "Roll";
 
   return (
-    <main className="app">
-      <div className="container">
-        <div className="game">
-          <Header />
-          <div className="grid-layout">
-            {dice.map((die) => (
-              <Dice key={die.id} handleClick={hold} {...die} />
-            ))}
+    <div>
+      {tenzies && <Confetti />}
+      <main className="app">
+        <div className="container">
+          <div className="game">
+            <Header />
+            <div className="grid-layout">
+              {dice.map((die) => (
+                <Dice key={die.id} handleClick={hold} {...die} />
+              ))}
+            </div>
+            <button onClick={rollDice} className="roll-dice">
+              {rollText}
+            </button>
           </div>
-          <button onClick={rollDice} className="roll-dice">
-            {rollText}
-          </button>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 
