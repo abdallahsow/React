@@ -51,6 +51,8 @@ const App = function () {
     );
   }
 
+  const rollText = tenzies ? "Reset Game" : "Roll";
+
   return (
     <main className="app">
       <div className="container">
@@ -62,7 +64,7 @@ const App = function () {
             ))}
           </div>
           <button onClick={rollDice} className="roll-dice">
-            Roll
+            {rollText}
           </button>
         </div>
       </div>
