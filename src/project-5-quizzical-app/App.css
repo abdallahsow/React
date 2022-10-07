@@ -25,13 +25,13 @@
 .orange-balloon {
   top: 0;
   right: 0;
-  background-color: red;
+  background-color: #FFFAD1;
   clip-path: circle(150px at 150px 0);
 }
 
 .blue-balloon {
   bottom: 0;
-  left: -7%;
+  left: 0;
   background-color: #DEEBF8;
-  clip: rect(0px, 200px, 100px, 100px);
+  clip-path: circle(150px at 0 150px);
 }
