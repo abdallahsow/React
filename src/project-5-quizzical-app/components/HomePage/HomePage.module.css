@@ -19,6 +19,8 @@
   background-color: #4d5b9e;
   padding: 15px 30px;
   border: none;
+  outline: none;
+  cursor: pointer;
   font-family: "Inter";
   font-weight: 500;
   font-size: 15px;
