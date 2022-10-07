@@ -1,12 +1,14 @@
 import "./App.css";
-import StartPage from "components/StartPage/StartPage";
+import HomePage from "./components/HomePage/HomePage";
 
 const App = function () {
-    return (
-        <div>
-            <StartPage />
-        </div>
-    )
-}
+  return (
+    <div className="app">
+      <div className={"orange-balloon"}></div>
+      <HomePage />
+      <div className={"blue-balloon"}></div>
+    </div>
+  );
+};
 
 export default App;

@@ -1,0 +1,26 @@
+.homePage {
+  color: #293264;
+  text-align: center;
+}
+
+.title {
+  font-family: "Karla", sans-serif;
+  font-size: 30px;
+}
+
+.description {
+  font-family: "Inter", sans-serif;
+  padding-block: 10px 30px;
+}
+
+.startButton {
+  border-radius: 15px;
+  color: #f5f7fb;
+  background-color: #4d5b9e;
+  padding: 15px 30px;
+  border: none;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 15px;
+  width: 200px;
+}
