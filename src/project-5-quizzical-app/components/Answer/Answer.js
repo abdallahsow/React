@@ -1,3 +1,7 @@
-export default function Answer({ answer }) {
-  return <p>{answer}</p>;
-}
+import styles from "./Answer.module.css";
+
+const Answer = ({ answer }) => {
+  return <button className={styles.singleAnswer}>{answer}</button>;
+};
+
+export default Answer;

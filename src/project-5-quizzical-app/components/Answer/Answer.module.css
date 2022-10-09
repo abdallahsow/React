@@ -1,0 +1,11 @@
+.singleAnswer {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  color: #293264;
+  padding: 5px 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid #4d5b9e;
+  cursor: pointer;
+  margin-right: 15px;
+}

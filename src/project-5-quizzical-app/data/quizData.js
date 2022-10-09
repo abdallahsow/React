@@ -6,7 +6,7 @@ export const quizData = [
   {
     question: "Who is CEO of Tesla?",
     answers: [
-      "Jeff Bezos",
+      "Jeff Bezos Julius Lantilus",
       "Elon Musk",
       "Bill Gates",
       "Tony Stark",
