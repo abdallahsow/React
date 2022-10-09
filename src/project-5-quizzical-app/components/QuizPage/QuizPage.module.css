@@ -1,13 +1,18 @@
 .quiz {
   width: fit-content;
   margin: auto;
-  padding: 5%;
+  padding: 5%; 
 }
 
 .quizBox {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
+  padding-top: 15px;
 }
 
+.quizHeader {
+  font-family: "Karla", sans-serif;
+  color: #293264;
+}
