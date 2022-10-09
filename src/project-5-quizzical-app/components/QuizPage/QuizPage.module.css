@@ -1,10 +1,13 @@
+.quiz {
+  width: fit-content;
+  margin: auto;
+  padding: 5%;
+}
+
 .quizBox {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
 }
 
-.options {
-    flex-wrap: wrap;
-}
