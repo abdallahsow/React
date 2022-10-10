@@ -5,7 +5,7 @@ import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
   const [isClicked, setIsClicked] = useState(false);
-  const [quizData, setQuizData] = useState([]);
+  const [quiz, setQuiz] = useState([]);
 
   function chooseAnswer(item) {
     setIsClicked(() => {
@@ -20,13 +20,28 @@ export default function QuizPage() {
     });
   }
 
+  const answers = () => {
+    const possibleAnswers = [];
+    for (let i = 0; i < quiz.length; i++) {
+      const answers = [];
+      for (let j = 0; j < quiz[i].incorrect_answers.length; j++) {
+        answers.push(quiz[i].incorrect_answers[j]);
+      }
+      answers.push(quiz[i].correct_answer);
+      possibleAnswers.push(answers);
+    }
+    return possibleAnswers;
+  };
+
+console.log(answers());
+
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    setQuizData(results)
-  }
+    setQuiz(results);
+  };
 
   useEffect(() => {
     fetchData();
