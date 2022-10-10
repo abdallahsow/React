@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Answer from "../Answer/Answer";
 import { quizData } from "../../data/quizData";
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
   const [isClicked, setIsClicked] = useState(false);
+  const [quizData, setQuizData] = useState([]);
 
   function chooseAnswer(item) {
     setIsClicked(() => {
@@ -18,6 +19,18 @@ export default function QuizPage() {
       }
     });
   }
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
+    );
+    const { results } = await data.json();
+    setQuizData(results)
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className={styles.quiz}>
