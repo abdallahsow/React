@@ -1,46 +1,35 @@
 import { useEffect, useState } from "react";
-import Answer from "../Answer/Answer";
-import { quizData } from "../../data/quizData";
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
-  const [isClicked, setIsClicked] = useState(false);
-  const [quiz, setQuiz] = useState([]);
+  const [quizData, setQuizData] = useState([]);
+  const [quizAnswers, setQuizAnswers] = useState([]);
 
-  function chooseAnswer(item) {
-    setIsClicked(() => {
-      for (const quiz of quizData) {
-        const { answers } = quiz;
-        for (const answer of answers) {
-          if (answer === item) {
-            return !isClicked;
-          }
-        }
-      }
-    });
-  }
+  console.log(quizData);
 
   const answers = () => {
     const possibleAnswers = [];
-    for (let i = 0; i < quiz.length; i++) {
+    for (let i = 0; i < quizData.length; i++) {
       const answers = [];
-      for (let j = 0; j < quiz[i].incorrect_answers.length; j++) {
-        answers.push(quiz[i].incorrect_answers[j]);
+      for (let j = 0; j < quizData[i].incorrect_answers.length; j++) {
+        answers.push(quizData[i].incorrect_answers[j]);
       }
-      answers.push(quiz[i].correct_answer);
+      answers.push(quizData[i].correct_answer);
       possibleAnswers.push(answers);
     }
     return possibleAnswers;
   };
 
-console.log(answers());
+  useEffect(() => {
+    setQuizAnswers(answers());
+  }, [quizData]);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
+      "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    setQuiz(results);
+    setQuizData(results);
   };
 
   useEffect(() => {
@@ -49,18 +38,16 @@ console.log(answers());
 
   return (
     <div className={styles.quiz}>
-      {quizData.map(({ question, answers }, index) => (
+      {quizData.map(({ question, correct_answer, incorrect_answers }, index) => (
         <div key={index} className={styles.quizBox}>
           <h4 className={styles.quizHeader}>{question}</h4>
           <div>
-            {answers.map((answer, index) => (
-              <Answer
-                key={index}
-                answer={answer}
-                isClicked={isClicked}
-                handleClick={chooseAnswer}
-              />
+            {incorrect_answers.map((answer, index) => (
+              <button key={index} className={styles.singleAnswer}>
+                {answer}
+              </button>
             ))}
+            <button className={styles.singleAnswer}>{correct_answer}</button>
           </div>
           <hr />
         </div>
