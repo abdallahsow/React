@@ -2,34 +2,16 @@ import { useEffect, useState } from "react";
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
-  const [quizData, setQuizData] = useState([]);
-  const [quizAnswers, setQuizAnswers] = useState([]);
+  const [apiData, setApiData] = useState([]);
 
-  console.log(quizData);
-
-  const answers = () => {
-    const possibleAnswers = [];
-    for (let i = 0; i < quizData.length; i++) {
-      const answers = [];
-      for (let j = 0; j < quizData[i].incorrect_answers.length; j++) {
-        answers.push(quizData[i].incorrect_answers[j]);
-      }
-      answers.push(quizData[i].correct_answer);
-      possibleAnswers.push(answers);
-    }
-    return possibleAnswers;
-  };
-
-  useEffect(() => {
-    setQuizAnswers(answers());
-  }, [quizData]);
+  console.log(apiData);
 
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    setQuizData(results);
+    setApiData(results);
   };
 
   useEffect(() => {
@@ -38,7 +20,7 @@ export default function QuizPage() {
 
   return (
     <div className={styles.quiz}>
-      {quizData.map(
+      {apiData.map(
         ({ question, correct_answer, incorrect_answers }, index) => (
           <div key={index} className={styles.quizBox}>
             <h4 className={styles.quizHeader}>{question}</h4>
