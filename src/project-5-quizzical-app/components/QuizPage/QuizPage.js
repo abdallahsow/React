@@ -38,20 +38,22 @@ export default function QuizPage() {
 
   return (
     <div className={styles.quiz}>
-      {quizData.map(({ question, correct_answer, incorrect_answers }, index) => (
-        <div key={index} className={styles.quizBox}>
-          <h4 className={styles.quizHeader}>{question}</h4>
-          <div>
-            {incorrect_answers.map((answer, index) => (
-              <button key={index} className={styles.singleAnswer}>
-                {answer}
-              </button>
-            ))}
-            <button className={styles.singleAnswer}>{correct_answer}</button>
+      {quizData.map(
+        ({ question, correct_answer, incorrect_answers }, index) => (
+          <div key={index} className={styles.quizBox}>
+            <h4 className={styles.quizHeader}>{question}</h4>
+            <div>
+              {incorrect_answers.map((answer, index) => (
+                <button key={index} className={styles.singleAnswer}>
+                  {answer}
+                </button>
+              ))}
+              <button className={styles.singleAnswer}>{correct_answer}</button>
+            </div>
+            <hr />
           </div>
-          <hr />
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 }
