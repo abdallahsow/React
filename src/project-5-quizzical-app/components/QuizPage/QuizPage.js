@@ -6,25 +6,6 @@ export default function QuizPage() {
 
   console.log(apiData);
 
-  const shuffle = (array) => {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
-  
-
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
