@@ -23,10 +23,7 @@ export default function QuizPage() {
     return array;
   }
 
-  const shuffleAnswers = (array) => {
-    const shuffledAnswers = shuffle(array);
-    return shuffledAnswers;
-  }
+  
 
   const fetchData = async () => {
     const data = await fetch(
