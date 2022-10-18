@@ -2,44 +2,39 @@ import { useEffect, useState } from "react";
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
-  const [apiData, setApiData] = useState([]);
-  const [answers, setAnswers] = useState([]);
+  const [quizData, setQuizData] = useState([]);
 
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    setApiData(results);
+    const quiz = [];
+    for (const result of results) {
+      const { question, correct_answer, incorrect_answers } = result;
+      const answers = [...incorrect_answers, correct_answer];
+      quiz.push({ question, answers });
+    }
+    setQuizData(quiz);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  function answerArray() {
-    return apiData.map(({ incorrect_answers, correct_answer }) => [
-      correct_answer,
-      ...incorrect_answers,
-    ]);
-  }
-
-  useEffect(() => {
-    setAnswers(answerArray);
-  }, [apiData]);
+  console.log(quizData);
 
   return (
     <div className={styles.quiz}>
-      {apiData.map(({ question, correct_answer, incorrect_answers }, index) => (
+      {quizData.map(({ question, answers }, index) => (
         <div key={index} className={styles.quizBox}>
           <h4 className={styles.quizHeader}>{question}</h4>
           <div>
-            {incorrect_answers.map((answer, index) => (
+            {answers.map((answer, index) => (
               <button key={index} className={styles.singleAnswer}>
                 {answer}
               </button>
             ))}
-            <button className={styles.singleAnswer}>{correct_answer}</button>
           </div>
           <hr />
         </div>
