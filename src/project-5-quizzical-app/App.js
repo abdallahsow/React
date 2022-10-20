@@ -1,13 +1,13 @@
-import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
 import QuizPage from "./components/QuizPage/QuizPage";
+import styles from "./App.module.css";
 
 const App = function () {
   return (
     <div className="app">
-      <div className={"orange-balloon"}></div>
+      <div className={styles.orangeBalloon}></div>
       <QuizPage />
-      <div className={"blue-balloon"}></div>
+      <div className={styles.blueBalloon}></div>
     </div>
   );
 };

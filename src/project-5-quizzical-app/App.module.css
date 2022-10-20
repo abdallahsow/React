@@ -10,21 +10,21 @@
   min-height: 100vh;
 }
 
-.orange-balloon,
-.blue-balloon {
+.orangeBalloon,
+.blueBalloon {
   position: absolute;
   width: 150px;
   height: 150px;
 }
 
-.orange-balloon {
+.orangeBalloon {
   top: 0;
   right: 0;
   background-color: #FFFAD1;
   clip-path: circle(150px at 150px 0);
 }
 
-.blue-balloon {
+.blueBalloon {
   bottom: 0;
   left: 0;
   background-color: #DEEBF8;
