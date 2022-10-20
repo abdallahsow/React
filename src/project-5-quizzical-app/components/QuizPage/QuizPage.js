@@ -57,7 +57,7 @@ export default function QuizPage() {
     <div className={styles.quiz}>
       {quizData.map(({ question, shuffledAnswers }, index) => (
         <div key={index} className={styles.quizBox}>
-          <h4 className={styles.quizHeader}>{question}</h4>
+          <h4 className={styles.question}>{question}</h4>
           <div>
             {shuffledAnswers.map((answer, index) => (
               <button
@@ -72,6 +72,9 @@ export default function QuizPage() {
           <hr />
         </div>
       ))}
+      <div className={styles.scoreBox}>
+        <button className={styles.submitButton}>Check Answers</button>
+      </div>
     </div>
   );
 }
