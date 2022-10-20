@@ -41,6 +41,16 @@ export default function QuizPage() {
     fetchData();
   }, []);
 
+  function chooseAnswer(event, chosenAnswer) {
+    quizData.map(({ shuffledAnswers }) =>
+      shuffledAnswers.map(
+        (answer) =>
+          answer === chosenAnswer &&
+          (event.target.style.backgroundColor = "#D6DBF5")
+      )
+    );
+  }
+
   console.log(quizData);
 
   return (
@@ -50,7 +60,11 @@ export default function QuizPage() {
           <h4 className={styles.quizHeader}>{question}</h4>
           <div>
             {shuffledAnswers.map((answer, index) => (
-              <button key={index} className={styles.singleAnswer}>
+              <button
+                key={index}
+                className={styles.singleAnswer}
+                onClick={(event) => chooseAnswer(event, answer)}
+              >
                 {answer}
               </button>
             ))}
