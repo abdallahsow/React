@@ -17,7 +17,7 @@
   color: #293264;
 }
 
-.singleAnswer {
+.singleAnswer, .holdAnswer {
   font-family: "Inter", sans-serif;
   font-size: 10px;
   color: #293264;
@@ -28,6 +28,11 @@
   cursor: pointer;
   margin-right: 15px;
   outline: none;
+}
+
+.holdAnswer {
+  background-color: red;
+  border: none;
 }
 
 .submitButton {

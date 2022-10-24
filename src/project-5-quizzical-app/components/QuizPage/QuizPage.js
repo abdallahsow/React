@@ -52,16 +52,14 @@ export default function QuizPage() {
   }, []);
 
   const hold = (selectAnswer) => {
-    quizData.map(({ shuffledAnswers }) =>
-      shuffledAnswers.map((data) => {
-        data.answer === selectAnswer
-          ? (data.isHeld = !data.isHeld)
-          : (data.isHeld = false);
-        return (styling = {
-          backgroundColor: data.isHeld ? "#D6DBF5" : "#f5f7fb",
-          border: data.isHeld & "none",
-        });
-      })
+    setQuizData(() =>
+      quizData.map(({ shuffledAnswers }) =>
+        shuffledAnswers.map(({ answer, isHeld }) => {
+          return answer === selectAnswer
+            ? { ...data, isHeld: !isHeld }
+            : { ...data, isHeld: false };
+        })
+      )
     );
   };
 
@@ -76,7 +74,9 @@ export default function QuizPage() {
             {shuffledAnswers.map((data, index) => (
               <button
                 key={index}
-                className={styles.singleAnswer}
+                className={
+                  data.isHeld ? styles.holdAnswer : styles.singleAnswer
+                }
                 onClick={() => hold(data.answer)}
               >
                 {data.answer}
