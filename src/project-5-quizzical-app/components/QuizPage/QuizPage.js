@@ -21,6 +21,15 @@ export default function QuizPage() {
     return array;
   };
 
+  function createAnswerArray(correctAnswer, incorrectAnswers) {
+    const answerArray = [];
+    answerArray.push({ answer: correctAnswer, isHeld: false });
+    incorrectAnswers.forEach((answer) => {
+      answerArray.push({ answer: answer, isHeld: false });
+    });
+    return shuffle(answerArray);
+  }
+
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
@@ -31,7 +40,7 @@ export default function QuizPage() {
     for (const result of results) {
       const { question, correct_answer, incorrect_answers } = result;
       const answers = [...incorrect_answers, correct_answer];
-      const shuffledAnswers = shuffle(answers);
+      const shuffledAnswers = createAnswerArray(correct_answer, incorrect_answers);
       quiz.push({ question, shuffledAnswers });
     }
     setQuizData(quiz);
@@ -41,16 +50,6 @@ export default function QuizPage() {
     fetchData();
   }, []);
 
-  function chooseAnswer(event, chosenAnswer) {
-    quizData.map(({ shuffledAnswers }) =>
-      shuffledAnswers.map(
-        (answer) =>
-          answer === chosenAnswer &&
-          (event.target.style.backgroundColor = "#D6DBF5")
-      )
-    );
-  }
-
   console.log(quizData);
 
   return (
@@ -59,13 +58,9 @@ export default function QuizPage() {
         <div key={index} className={styles.quizBox}>
           <h4 className={styles.question}>{question}</h4>
           <div>
-            {shuffledAnswers.map((answer, index) => (
-              <button
-                key={index}
-                className={styles.singleAnswer}
-                onClick={(event) => chooseAnswer(event, answer)}
-              >
-                {answer}
+            {shuffledAnswers.map((data, index) => (
+              <button key={index} className={styles.singleAnswer}>
+                {data.answer}
               </button>
             ))}
           </div>
