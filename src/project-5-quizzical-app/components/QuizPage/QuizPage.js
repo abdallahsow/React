@@ -35,12 +35,13 @@ export default function QuizPage() {
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    console.log(results);
     const quiz = [];
     for (const result of results) {
       const { question, correct_answer, incorrect_answers } = result;
-      const answers = [...incorrect_answers, correct_answer];
-      const shuffledAnswers = createAnswerArray(correct_answer, incorrect_answers);
+      const shuffledAnswers = createAnswerArray(
+        correct_answer,
+        incorrect_answers
+      );
       quiz.push({ question, shuffledAnswers });
     }
     setQuizData(quiz);
@@ -49,6 +50,20 @@ export default function QuizPage() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const hold = (selectAnswer) => {
+    quizData.map(({ shuffledAnswers }) =>
+      shuffledAnswers.map((data) => {
+        data.answer === selectAnswer
+          ? (data.isHeld = !data.isHeld)
+          : (data.isHeld = false);
+        return (styling = {
+          backgroundColor: data.isHeld ? "#D6DBF5" : "#f5f7fb",
+          border: data.isHeld & "none",
+        });
+      })
+    );
+  };
 
   console.log(quizData);
 
@@ -59,7 +74,11 @@ export default function QuizPage() {
           <h4 className={styles.question}>{question}</h4>
           <div>
             {shuffledAnswers.map((data, index) => (
-              <button key={index} className={styles.singleAnswer}>
+              <button
+                key={index}
+                className={styles.singleAnswer}
+                onClick={() => hold(data.answer)}
+              >
                 {data.answer}
               </button>
             ))}
