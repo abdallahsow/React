@@ -52,14 +52,13 @@ export default function QuizPage() {
   }, []);
 
   const hold = (selectAnswer) => {
-    setQuizData(() =>
-      quizData.map(({ shuffledAnswers }) =>
-        shuffledAnswers.map(({ answer, isHeld }) => {
-          return answer === selectAnswer
-            ? { ...data, isHeld: !isHeld }
-            : { ...data, isHeld: false };
-        })
-      )
+    setQuizData((prevQuiz) =>
+      prevQuiz.map((quiz) => ({
+        ...quiz,
+        shuffledAnswers: quiz.shuffledAnswers.map((data) =>
+         ({ ...data, isHeld: data.answer === selectAnswer ? !data.isHeld : data.isHeld })
+        ),
+      }))
     );
   };
 
