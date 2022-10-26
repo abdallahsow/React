@@ -55,7 +55,7 @@ const App = function () {
         ...quiz,
         shuffledAnswers: quiz.shuffledAnswers.map((data) => ({
           ...data,
-          isHeld: data.answer === selectAnswer ? !data.isHeld : false,
+          isHeld: data.answer === selectAnswer ? !data.isHeld : data.isHeld,
         })),
       }))
     );
@@ -68,7 +68,7 @@ const App = function () {
   }
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <div className={styles.orangeBalloon}></div>
       {quizData.length ? (
         <QuizPage quizData={quizData} hold={hold} />

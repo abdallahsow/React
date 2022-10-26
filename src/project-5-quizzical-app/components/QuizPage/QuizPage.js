@@ -23,6 +23,7 @@ export default function QuizPage({ quizData, hold }) {
         </div>
       ))}
       <div className={styles.scoreBox}>
+        <p className={styles.gameState}>You scored 3/5 correct answers</p>
         <button className={styles.submitButton}>Check Answers</button>
       </div>
     </div>
