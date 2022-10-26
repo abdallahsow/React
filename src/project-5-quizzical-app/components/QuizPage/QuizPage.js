@@ -55,9 +55,10 @@ export default function QuizPage() {
     setQuizData((prevQuiz) =>
       prevQuiz.map((quiz) => ({
         ...quiz,
-        shuffledAnswers: quiz.shuffledAnswers.map((data) =>
-         ({ ...data, isHeld: data.answer === selectAnswer ? !data.isHeld : data.isHeld })
-        ),
+        shuffledAnswers: quiz.shuffledAnswers.map((data) => ({
+          ...data,
+          isHeld: data.answer === selectAnswer ? !data.isHeld : false,
+        })),
       }))
     );
   };
