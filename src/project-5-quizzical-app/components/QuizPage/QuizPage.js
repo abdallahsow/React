@@ -1,19 +1,6 @@
-import { useEffect, useState } from "react";
 import styles from "./QuizPage.module.css";
 
-export default function QuizPage({ quizData }) {
-  const hold = (selectAnswer) => {
-    setQuizData((prevQuiz) =>
-      prevQuiz.map((quiz) => ({
-        ...quiz,
-        shuffledAnswers: quiz.shuffledAnswers.map((data) => ({
-          ...data,
-          isHeld: data.answer === selectAnswer ? !data.isHeld : false,
-        })),
-      }))
-    );
-  };
-
+export default function QuizPage({ quizData, hold }) {
   return (
     <div className={styles.quiz}>
       {quizData.map(({ question, shuffledAnswers }, index) => (

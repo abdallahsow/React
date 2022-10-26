@@ -49,6 +49,18 @@ const App = function () {
     setQuizData(quiz);
   };
 
+  const hold = (selectAnswer) => {
+    setQuizData((prevQuiz) =>
+      prevQuiz.map((quiz) => ({
+        ...quiz,
+        shuffledAnswers: quiz.shuffledAnswers.map((data) => ({
+          ...data,
+          isHeld: data.answer === selectAnswer ? !data.isHeld : false,
+        })),
+      }))
+    );
+  };
+
   console.log(quizData);
 
   function createNewGame() {
@@ -59,7 +71,7 @@ const App = function () {
     <div className="app">
       <div className={styles.orangeBalloon}></div>
       {quizData.length ? (
-        <QuizPage quizData={quizData} />
+        <QuizPage quizData={quizData} hold={hold} />
       ) : (
         <HomePage handleClick={createNewGame} />
       )}
