@@ -6,6 +6,23 @@ import styles from "./App.module.css";
 const App = function () {
   const [quizData, setQuizData] = useState([]);
   
+  const shuffle = (array) => {
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
+
   function createAnswerArray(correctAnswer, incorrectAnswers) {
     const answerArray = [];
     answerArray.push({ answer: correctAnswer, isHeld: false });
