@@ -1,56 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./QuizPage.module.css";
 
-export default function QuizPage() {
-  const [quizData, setQuizData] = useState([]);
-
-  const shuffle = (array) => {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  };
-
-  function createAnswerArray(correctAnswer, incorrectAnswers) {
-    const answerArray = [];
-    answerArray.push({ answer: correctAnswer, isHeld: false });
-    incorrectAnswers.forEach((answer) => {
-      answerArray.push({ answer: answer, isHeld: false });
-    });
-    return shuffle(answerArray);
-  }
-
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
-    );
-    const { results } = await data.json();
-    const quiz = [];
-    for (const result of results) {
-      const { question, correct_answer, incorrect_answers } = result;
-      const shuffledAnswers = createAnswerArray(
-        correct_answer,
-        incorrect_answers
-      );
-      quiz.push({ question, shuffledAnswers });
-    }
-    setQuizData(quiz);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+export default function QuizPage({ quizData }) {
   const hold = (selectAnswer) => {
     setQuizData((prevQuiz) =>
       prevQuiz.map((quiz) => ({
@@ -62,8 +13,6 @@ export default function QuizPage() {
       }))
     );
   };
-
-  console.log(quizData);
 
   return (
     <div className={styles.quiz}>

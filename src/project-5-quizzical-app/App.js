@@ -5,7 +5,7 @@ import styles from "./App.module.css";
 
 const App = function () {
   const [quizData, setQuizData] = useState([]);
-  
+
   const shuffle = (array) => {
     let currentIndex = array.length,
       temporaryValue,
@@ -31,7 +31,7 @@ const App = function () {
     });
     return shuffle(answerArray);
   }
-  
+
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
@@ -48,21 +48,21 @@ const App = function () {
     }
     setQuizData(quiz);
   };
-  fetchData();
-  console.log(quizData)
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  console.log(quizData);
 
-  // function createNewGame() {
-  //   setQuizData(fetchData());
-  // }
+  function createNewGame() {
+    setQuizData(fetchData());
+  }
 
   return (
     <div className="app">
       <div className={styles.orangeBalloon}></div>
-      <HomePage />
+      {quizData.length ? (
+        <QuizPage quizData={quizData} />
+      ) : (
+        <HomePage handleClick={createNewGame} />
+      )}
       <div className={styles.blueBalloon}></div>
     </div>
   );
