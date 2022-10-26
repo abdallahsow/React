@@ -6,6 +6,15 @@ import styles from "./App.module.css";
 const App = function () {
   const [quizData, setQuizData] = useState([]);
   
+  function createAnswerArray(correctAnswer, incorrectAnswers) {
+    const answerArray = [];
+    answerArray.push({ answer: correctAnswer, isHeld: false });
+    incorrectAnswers.forEach((answer) => {
+      answerArray.push({ answer: answer, isHeld: false });
+    });
+    return shuffle(answerArray);
+  }
+  
   const fetchData = async () => {
     const data = await fetch(
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
