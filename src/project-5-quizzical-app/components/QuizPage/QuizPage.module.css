@@ -17,10 +17,10 @@
   color: #293264;
 }
 
-.held,
-.normal,
-.isCorrect,
-.isIncorrect {
+.normalAnswer,
+.answerHeld,
+.correctAnswer,
+.incorrectAnswer {
   font-family: "Inter", sans-serif;
   font-size: 10px;
   color: #293264;
@@ -33,19 +33,19 @@
   border: none;
 }
 
-.normal {
+.normalAnswer {
   border: 1px solid #4d5b9e;
 }
 
-.held {
+.answerHeld {
   background-color: #d6dbf5;
 }
 
-.isCorrect {
+.correctAnswer {
   background-color: #94d7a2;
 }
 
-.isIncorrect {
+.incorrectAnswer {
   background-color: #f8bcbc;
 }
 

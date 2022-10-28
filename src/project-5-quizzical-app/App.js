@@ -42,15 +42,15 @@ const App = function () {
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
-    setApiData(results);
     const quiz = [];
+    setApiData(results);
     for (const result of results) {
       const { question, correct_answer, incorrect_answers } = result;
       const shuffledAnswers = createAnswerArray(
         correct_answer,
         incorrect_answers
       );
-      quiz.push({ question, shuffledAnswers });
+      quiz.push({ question, shuffledAnswers, correct_answer });
     }
     setQuizData(quiz);
   };
@@ -75,16 +75,13 @@ const App = function () {
 
   function checkAnswers() {
     setQuizData(() =>
-      quizData.map(({ shuffledAnswers }) =>
-        shuffledAnswers.map((data) => {
-          for (const result of apiData) {
-            const { correct_answer } = result;
-            data.answer === correct_answer
-              ? (data.isCorrect = true)
-              : (data.isCorrect = false);
-          }
-        })
-      )
+      quizData.map((quiz) => ({
+        ...quiz,
+        shuffledAnswers: quiz.shuffledAnswers.map((data) => ({
+          ...data,
+          isCorrect: data.answer === quiz.correct_answer ? true : false,
+        })),
+      }))
     );
   }
 

@@ -1,16 +1,6 @@
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage({ quizData, hold, checkAnswers }) {
-  const requiredClassName = (isHeld, isCorrect) => {
-    if (isHeld) {
-      return styles.held;
-    } else if (isCorrect) {
-      return styles.correct;
-    } else {
-      return styles.incorrect;
-    }
-  };
-
   return (
     <div className={styles.quiz}>
       {quizData.map(({ question, shuffledAnswers }, index) => (
@@ -20,11 +10,9 @@ export default function QuizPage({ quizData, hold, checkAnswers }) {
             {shuffledAnswers.map((data, index) => (
               <button
                 key={index}
-                className={
-                  data.isHeld === false
-                    ? styles.normal
-                    : requiredClassName(data.isHeld, data.isCorrect)
-                }
+                className={`${
+                  data.isHeld ? styles.answerHeld : styles.normalAnswer
+                } ${data.correct_answer ? styles.correctAnswer : ""}`}
                 onClick={() => hold(data.answer)}
               >
                 {data.answer}
