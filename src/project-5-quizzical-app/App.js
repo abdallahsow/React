@@ -4,6 +4,7 @@ import QuizPage from "./components/QuizPage/QuizPage";
 import styles from "./App.module.css";
 
 const App = function () {
+  const [apiData, setApiData] = useState([]);
   const [quizData, setQuizData] = useState([]);
 
   const shuffle = (array) => {
@@ -25,9 +26,13 @@ const App = function () {
 
   function createAnswerArray(correctAnswer, incorrectAnswers) {
     const answerArray = [];
-    answerArray.push({ answer: correctAnswer, isHeld: false });
+    answerArray.push({
+      answer: correctAnswer,
+      isHeld: false,
+      isCorrect: false,
+    });
     incorrectAnswers.forEach((answer) => {
-      answerArray.push({ answer: answer, isHeld: false });
+      answerArray.push({ answer: answer, isHeld: false, isCorrect: false });
     });
     return shuffle(answerArray);
   }
@@ -37,6 +42,7 @@ const App = function () {
       "https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple"
     );
     const { results } = await data.json();
+    setApiData(results);
     const quiz = [];
     for (const result of results) {
       const { question, correct_answer, incorrect_answers } = result;
@@ -67,11 +73,26 @@ const App = function () {
     setQuizData(fetchData());
   }
 
+  function checkAnswers() {
+    setQuizData(() =>
+      quizData.map(({ shuffledAnswers }) =>
+        shuffledAnswers.map((data) => {
+          for (const result of apiData) {
+            const { correct_answer } = result;
+            data.answer === correct_answer
+              ? (data.isCorrect = true)
+              : (data.isCorrect = false);
+          }
+        })
+      )
+    );
+  }
+
   return (
     <div className={styles.app}>
       <div className={styles.orangeBalloon}></div>
       {quizData.length ? (
-        <QuizPage quizData={quizData} hold={hold} />
+        <QuizPage quizData={quizData} hold={hold} checkAnswers={checkAnswers} />
       ) : (
         <HomePage handleClick={createNewGame} />
       )}
