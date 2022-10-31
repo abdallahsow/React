@@ -4,7 +4,6 @@ import QuizPage from "./components/QuizPage/QuizPage";
 import styles from "./App.module.css";
 
 const App = function () {
-  const [apiData, setApiData] = useState([]);
   const [quizData, setQuizData] = useState([]);
 
   const shuffle = (array) => {
@@ -43,7 +42,6 @@ const App = function () {
     );
     const { results } = await data.json();
     const quiz = [];
-    setApiData(results);
     for (const result of results) {
       const { question, correct_answer, incorrect_answers } = result;
       const shuffledAnswers = createAnswerArray(
