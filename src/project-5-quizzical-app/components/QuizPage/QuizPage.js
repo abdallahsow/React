@@ -10,6 +10,9 @@ export default function QuizPage({ quizData, hold, checkAnswers }) {
             {shuffledAnswers.map((data, index) => (
               <button
                 key={index}
+                style={{
+                  backgroundColor: data.isCorrect ? "#94d7a2" : "",
+                }}
                 className={
                   data.isHeld ? styles.answerHeld : styles.normalAnswer
                 }
